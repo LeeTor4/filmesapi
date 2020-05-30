@@ -1,0 +1,110 @@
+package br.uece.eesdevop.filmesapi.domain;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.DoubleStream;
+import java.util.stream.Stream;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@Entity
+public class Filme {
+
+	@JsonInclude(Include.NON_NULL)
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private Long    id;
+	@JsonInclude(Include.NON_NULL)
+	private String  titulo;
+	@JsonInclude(Include.NON_NULL)
+	private String  protagonista;
+	
+	private String  produtor;
+
+	private String  anoLancamento;
+	
+	private String  sinopse;
+	
+	private Double mediaAvaliacao;
+	
+	@JsonInclude(Include.NON_NULL)
+	@OneToMany(mappedBy="filme")
+	private List<Avaliacao> avaliacao;
+	
+	public Filme() {
+		avaliacao = new ArrayList<>();
+	}
+	
+    public Filme(String titulo) {
+		this.titulo = titulo;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public String getProtagonista() {
+		return protagonista;
+	}
+	public void setProtagonista(String protagonista) {
+		this.protagonista = protagonista;
+	}
+	public String getProdutor() {
+		return produtor;
+	}
+	public void setProdutor(String produtor) {
+		this.produtor = produtor;
+	}
+	public String getAnoLancamento() {
+		return anoLancamento;
+	}
+	public void setAnoLancamento(String anoLancamento) {
+		this.anoLancamento = anoLancamento;
+	}
+	public String getSinopse() {
+		return sinopse;
+	}
+	public void setSinopse(String sinopse) {
+		this.sinopse = sinopse;
+	}
+
+	public List<Avaliacao> getAvaliacao() {
+		return avaliacao;
+	}
+
+	public void setAvaliacao(List<Avaliacao> avaliacao) {
+		this.avaliacao = avaliacao;
+	}
+
+	public Double getMediaAvaliacao() {
+		List<Double> listAva = new ArrayList<>();
+		for(Avaliacao ava : avaliacao){
+			listAva.add(ava.getNotaAvaliacao());
+		}
+		
+		listAva.stream()
+		
+		
+		return mediaAvaliacao;
+	}
+
+	public void setMediaAvaliacao(Double mediaAvaliacao) {
+		this.mediaAvaliacao = mediaAvaliacao;
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package br.uece.eesdevop.filmesapi.resources;
+
+public class AvaliacaoResources {
+
+}

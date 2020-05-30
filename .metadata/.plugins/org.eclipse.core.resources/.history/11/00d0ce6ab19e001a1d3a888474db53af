@@ -1,0 +1,37 @@
+package br.uece.eesdevop.filmesapi.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import br.uece.eesdevop.filmesapi.domain.Filme;
+
+
+
+public class FilmesDAO {
+	
+    private EntityManager em;
+    private EntityManagerFactory emf;
+    
+	public FilmesDAO() {
+	    this.emf = Persistence.createEntityManagerFactory("persistenceUnitName");
+	    this.em = emf.createEntityManager();
+		
+	}
+	
+	public void salvarDao(Filme filme) {
+       
+		em.getTransaction().begin();
+		em.persist(filme);
+		em.getTransaction().commit();
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Filme> listarDao(){
+	  return em.createQuery("from Filme").getResultList();
+	}
+
+}

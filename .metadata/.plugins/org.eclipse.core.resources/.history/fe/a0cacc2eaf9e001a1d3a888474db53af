@@ -1,0 +1,10 @@
+package br.uece.eesdevop.filmesapi.dao;
+
+import java.util.List;
+
+
+
+public class AvaliacaoDAO {
+	
+	
+}

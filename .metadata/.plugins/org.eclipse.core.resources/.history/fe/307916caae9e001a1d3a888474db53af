@@ -1,0 +1,27 @@
+package br.uece.eesdevop.filmesapi.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class FilmesDAO {
+	
+
+	public FilmesDAO() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void salvarDao(Filme filme) {
+//		Conexao.getEm().getTransaction().begin();
+//		Conexao.getEm().persist(filme);
+//		Conexao.getEm().getTransaction().commit();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Filme> listarDao(){
+	//	return Conexao.getEm().createQuery("from Filme").getResultList();
+	}
+
+}

@@ -1,0 +1,18 @@
+package br.uece.eesdevop.filmesapi.conexao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
+public class Conexao {
+	
+	 private EntityManagerFactory emf;
+	 private EntityManager em;
+	
+	 public Conexao(EntityManagerFactory emf,EntityManager em) {
+		 this.emf = emf;
+	     this.em = em;	
+	}
+
+    
+
+}
