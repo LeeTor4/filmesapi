@@ -2,19 +2,6 @@
 
 #### Segue abaixo o script da criação do banco postgres12 e pgadmin4:
 
--- SEQUENCE: public.filme_id_seq <br/>
-
--- DROP SEQUENCE public.filme_id_seq; <br/>
-
-CREATE SEQUENCE public.filme_id_seq <br/>
-    INCREMENT 1  <br/>
-    START 36     <br/>
-    MINVALUE 1   <br/>
-    MAXVALUE 9223372036854775807  <br/>
-    CACHE 1;  <br/>
-
-ALTER SEQUENCE public.filme_id_seq  <br/>
-    OWNER TO postgres;  <br/>
  
      -- Database: dbfilmes 
 
@@ -29,10 +16,24 @@ ALTER SEQUENCE public.filme_id_seq  <br/>
               TABLESPACE = pg_default 
               CONNECTION LIMIT = -1; 
               
-#### Segue abaixo o script da criação das tabelas:
+#### Segue abaixo o script das sequencias e das tabelas:
 
 #### Tabela filme
 
+-- SEQUENCE: public.filme_id_seq 
+
+-- DROP SEQUENCE public.filme_id_seq; 
+
+CREATE SEQUENCE public.filme_id_seq 
+    INCREMENT 1  
+    START 36     
+    MINVALUE 1   
+    MAXVALUE 9223372036854775807  
+    CACHE 1;  
+
+ALTER SEQUENCE public.filme_id_seq  
+    OWNER TO postgres;  
+    
       -- Table: public.filme
 
       -- DROP TABLE public.filme;
