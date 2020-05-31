@@ -26,7 +26,7 @@
 
 CREATE SEQUENCE public.filme_id_seq 
     INCREMENT 1  
-    START 36     
+    START 1     
     MINVALUE 1   
     MAXVALUE 9223372036854775807  
     CACHE 1;  
@@ -63,7 +63,7 @@ ALTER SEQUENCE public.filme_id_seq
 
 CREATE SEQUENCE public.avaliacao_id_seq  <br/>
     INCREMENT 1  <br/>
-    START 27     <br/>
+    START 1     <br/>
     MINVALUE 1   <br/>
     MAXVALUE 9223372036854775807  <br/>
     CACHE 1; <br/>
