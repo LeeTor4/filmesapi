@@ -2,6 +2,19 @@
 
 #### Segue abaixo o script da criação do banco postgres12 e pgadmin4:
 
+-- SEQUENCE: public.filme_id_seq <br/>
+
+-- DROP SEQUENCE public.filme_id_seq; <br/>
+
+CREATE SEQUENCE public.filme_id_seq <br/>
+    INCREMENT 1  <br/>
+    START 36     <br/>
+    MINVALUE 1   <br/>
+    MAXVALUE 9223372036854775807  <br/>
+    CACHE 1;  <br/>
+
+ALTER SEQUENCE public.filme_id_seq  <br/>
+    OWNER TO postgres;  <br/>
  
      -- Database: dbfilmes 
 
@@ -42,6 +55,21 @@
           OWNER to postgres;
           
 #### Tabela avaliacao
+
+-- SEQUENCE: public.avaliacao_id_seq  <br/>
+
+-- DROP SEQUENCE public.avaliacao_id_seq;  <br/>
+
+CREATE SEQUENCE public.avaliacao_id_seq  <br/>
+    INCREMENT 1  <br/>
+    START 27     <br/>
+    MINVALUE 1   <br/>
+    MAXVALUE 9223372036854775807  <br/>
+    CACHE 1; <br/>
+
+ALTER SEQUENCE public.avaliacao_id_seq <br/>
+    OWNER TO postgres; <br/>
+    
 
 -- Table: public.avaliacao <br/>
 
